@@ -43,7 +43,7 @@ jobs:
           exit 1
 
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      - uses: actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68 # v6.0.0
+      - uses: actions/setup-dotnet@0f4a354dd5547a28c70b7853dbd95d5b67886e73 # v6.1.0
         with:
           dotnet-version: 10.0.x
 
@@ -79,7 +79,7 @@ jobs:
           Move-Item dist/_manifest/spdx_2.2/manifest.spdx.json "dist/V-Clicker-$env:VERSION.spdx.json"
           Remove-Item dist/_manifest -Recurse
 
-      - uses: sigstore/cosign-installer@6f9f17788090df1f26f669e9d70d6ae9567deba6 # v3.10.1
+      - uses: sigstore/cosign-installer@756fe2d284c7292c4e9b62c8a28f1e5629c59532 # v3.10.1
       - name: Sign the executable and the zip (Sigstore, keyless, bound to this workflow's identity)
         shell: pwsh
         run: |
